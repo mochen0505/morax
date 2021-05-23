@@ -1,6 +1,6 @@
 {
   "name": "@morax/spear",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "Node CLI for creating react app",
   "bin": {
     "moo": "./bin/moo.js"
@@ -12,6 +12,9 @@
     "webpack",
     "react"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "author": {
     "name": "Mo",
     "url": "https://github.com/mochen0505",

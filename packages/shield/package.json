@@ -1,12 +1,15 @@
 {
   "name": "@morax/shield",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "Set of higher-order components",
   "main": "lib/shield.js",
   "scripts": {},
   "keywords": [
     "hoc"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "author": {
     "name": "Mo",
     "url": "https://github.com/mochen0505",
