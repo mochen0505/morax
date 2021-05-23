@@ -1,6 +1,6 @@
 {
   "name": "@morax/spear",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Node CLI for creating react app",
   "bin": {
     "moo": "./bin/moo.js"
@@ -28,9 +28,8 @@
   },
   "license": "MIT",
   "files": [
-      "libs"
+    "libs"
   ],
-  "devDependencies": {},
   "dependencies": {
     "@babel/core": "^7.11.4",
     "@babel/plugin-transform-runtime": "^7.11.0",
