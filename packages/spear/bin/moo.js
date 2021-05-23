@@ -6,7 +6,7 @@ const dayjs = require('dayjs');
 const chalk = require('chalk');
 const packageVersion = require('../package.json').version;
 const requiredNodeVersion = require('../package.json').engines.node;
-const { checkNodeVersion, checkMoraxVersion, notifier } = require('../lib/checkVersion');
+const { checkNodeVersion, checkMoraxVersion, notifier } = require('../utils/checkVersion');
 
 
 const config = new Conf();

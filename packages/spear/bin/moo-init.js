@@ -3,7 +3,7 @@
 const inquirer = require('inquirer')
 const program = require('commander')
 const chalk = require('chalk')
-const templateInit = require('../lib/templateInit')
+const templateInit = require('../utils/templateInit')
 
 const promptList = [
 
