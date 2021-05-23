@@ -8,14 +8,14 @@ const { PROJECT_NODE_VERSION, NPM_VERSION_URL } = require('../scripts/constants'
 
 function checkNodeVersion(requiredNodeVersion) {
     if (!semver.satisfies(PROJECT_NODE_VERSION, requiredNodeVersion)) {
-        console.log(chalk.red(`You are using Node ${PROJECT_NODE_VERSION}, but momula requires a Node version of ${requiredNodeVersion} or higher`));
+        console.log(chalk.red(`You are using Node ${PROJECT_NODE_VERSION}, but morax requires a Node version of ${requiredNodeVersion} or higher`));
         process.exit(-1);
     } else {
         console.log(chalk.yellow('Node environment checked...'))
     }
 }
 
-function checkMomulaVersion() {
+function checkMoraxVersion() {
     const options = {
         accept: 'application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*'
     }
@@ -24,7 +24,7 @@ function checkMomulaVersion() {
 }
 
 function notifier(latest) {
-    let message = ['New version of momula detected ', chalk.dim(packageVersion), chalk.reset(' → '), chalk.green(latest), ' \nRun ', chalk.cyan('npm i -g momula'), ' to update'].join('')
+    let message = ['New version of Morax detected ', chalk.dim(packageVersion), chalk.reset(' → '), chalk.green(latest), ' \nRun ', chalk.cyan('npm i -g @morax/spear'), ' to update'].join('')
 
     const boxenOpts = {
         padding: 1,
@@ -42,6 +42,6 @@ function notifier(latest) {
 
 module.exports = {
     checkNodeVersion,
-    checkMomulaVersion,
+    checkMoraxVersion,
     notifier,
 };

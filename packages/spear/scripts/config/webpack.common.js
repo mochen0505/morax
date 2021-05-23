@@ -8,7 +8,7 @@ const webpack = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-const { PROJECT_PATH, MOMULA_PATH, isDev } = require('../constants')
+const { PROJECT_PATH, SPEAR_PATH, isDev } = require('../constants')
 
 const getCssLoaders = (importLoaders) => [
     isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
@@ -57,7 +57,7 @@ module.exports = {
         },
     },
     resolveLoader: {
-        modules: [resolve(MOMULA_PATH, 'node_modules')],
+        modules: [resolve(SPEAR_PATH, 'node_modules')],
     },
     module: {
         rules: [
@@ -69,17 +69,17 @@ module.exports = {
                     // 无法写在.babelrc里
                     presets: [
                         [
-                            `${MOMULA_PATH}/node_modules/@babel/preset-env`,
+                            `${SPEAR_PATH}/node_modules/@babel/preset-env`,
                             {
                                 modules: false,
                             },
                         ],
-                        `${MOMULA_PATH}/node_modules/@babel/preset-react`,
-                        `${MOMULA_PATH}/node_modules/@babel/preset-typescript`,
+                        `${SPEAR_PATH}/node_modules/@babel/preset-react`,
+                        `${SPEAR_PATH}/node_modules/@babel/preset-typescript`,
                     ],
                     plugins: [
                         [
-                            `${MOMULA_PATH}/node_modules/@babel/plugin-transform-runtime`,
+                            `${SPEAR_PATH}/node_modules/@babel/plugin-transform-runtime`,
                             {
                                 corejs: {
                                     version: 3,
@@ -92,7 +92,7 @@ module.exports = {
                 },
                 include: [
                     resolve(PROJECT_PATH, './src'),
-                    resolve(PROJECT_PATH, './node_modules/@mochen0505')
+                    resolve(PROJECT_PATH, './node_modules/@morax')
                 ],
             },
             {
@@ -176,7 +176,7 @@ module.exports = {
         }),
         new ForkTsCheckerWebpackPlugin({
             typescript: {
-                configFile: resolve(MOMULA_PATH, './tsconfig.json'),
+                configFile: resolve(SPEAR_PATH, './tsconfig.json'),
             },
         }),
         new HardSourceWebpackPlugin(),

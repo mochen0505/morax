@@ -2,7 +2,7 @@
   "name": "@morax/shield",
   "version": "0.0.7",
   "description": "Set of higher-order components",
-  "main": "lib/shield.js",
+  "main": "lib/Launcher.js",
   "scripts": {},
   "keywords": [
     "hoc"

@@ -2,7 +2,7 @@ const path = require('path')
 const fs = require('fs-extra')
 const ora = require('ora')
 const chalk = require('chalk')
-const { MOMULA_PATH, PROJECT_PATH } = require('../scripts/constants');
+const { SPEAR_PATH, PROJECT_PATH } = require('../scripts/constants');
 const appendFiles = require('./appendFiles');
 const installDependencies = require('./installDependencies');
 
@@ -13,7 +13,7 @@ function templateInit(projectName) {
         text: chalk.yellow(`Spawning ${projectName}...`),
     })
 
-    const src = path.resolve(MOMULA_PATH, './template');
+    const src = path.resolve(SPEAR_PATH, './template');
     const dest = path.resolve(PROJECT_PATH, `./${projectName}`);
 
     spinner.start()

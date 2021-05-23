@@ -1,4 +1,4 @@
-import Launcher from '@mochen0505/launcher'
+import Launcher from '@morax/shield'
 import routes from './routes.config'
 
 if (module && module.hot) {
