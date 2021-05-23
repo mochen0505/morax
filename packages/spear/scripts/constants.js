@@ -7,7 +7,7 @@ const SERVER_HOST = '127.0.0.1';
 const SERVER_PORT = 8888;
 const isDev = process.env.NODE_ENV !== 'production';
 
-const NPM_VERSION_URL = 'https://registry.npmjs.org/momula/latest';
+const NPM_VERSION_URL = 'https://registry.npmjs.org/@morax/spear/latest';
 
 module.exports = {
     MOMULA_PATH,
