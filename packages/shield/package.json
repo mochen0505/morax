@@ -1,11 +1,27 @@
 {
-  "name": "shield",
+  "name": "@morax/shield",
   "version": "1.0.0",
-  "description": "Set of higher-order components for spear\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C",
-  "author": "Mo Chen <mochen0505@hotmail.com>",
-  "homepage": "",
-  "license": "MIT",
+  "description": "Set of higher-order components",
   "main": "lib/shield.js",
+  "scripts": {},
+  "keywords": [
+    "hoc"
+  ],
+  "author": {
+    "name": "Mo",
+    "url": "https://github.com/mochen0505",
+    "email": "mochen0505@hotmail.com"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "ie >= 9",
+    "not op_mini all"
+  ],
+  "engines": {
+    "node": ">=10.13.0"
+  },
+  "license": "MIT",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -13,7 +29,10 @@
   "files": [
     "lib"
   ],
-  "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+  "dependencies": {
+    "history": "^5.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0"
   }
 }

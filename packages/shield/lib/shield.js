@@ -1,7 +1,28 @@
-'use strict';
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import WrapperTemplate from './template';
 
-module.exports = shield;
+export default class Launcher extends Component {
+    constructor(props) {
+        super(props)
+    }
 
-function shield() {
-    // TODO
+    async start() {
+
+        const {
+            routes,
+        } = this.props
+
+        const rootElement = document.querySelector('#root')
+        const render = ReactDOM.render;
+
+        render(
+            <WrapperTemplate
+                routes={routes}
+            />,
+            rootElement
+        )
+    }
+
 }
+

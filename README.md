@@ -1,15 +1,4 @@
 # README #
 
-MOMULA-HOC
+MORAX
 
-Set of higher-order components for momula
-
-## Usage
-
-```
-npm install --save @mochen0505/launcher
-```
-
-### TODO
-
-* HOCs

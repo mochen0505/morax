@@ -1,7 +1,5 @@
 # README #
 
-MOMULA
-
 A Node CLI for creating react app
 
 
@@ -10,7 +8,7 @@ A Node CLI for creating react app
 * Install
 
 ```bash
-npm install -g momula
+npm install -g @morax/spear
 ```
 
 * Create an app
