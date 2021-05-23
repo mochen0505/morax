@@ -30,9 +30,6 @@
     "node": ">=10.13.0"
   },
   "license": "MIT",
-  "files": [
-    "libs"
-  ],
   "dependencies": {
     "@babel/core": "^7.11.4",
     "@babel/plugin-transform-runtime": "^7.11.0",
