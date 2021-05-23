@@ -1,6 +1,6 @@
 {
   "name": "@morax/shield",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Set of higher-order components",
   "main": "lib/shield.js",
   "scripts": {},
