@@ -1,0 +1,25 @@
+{
+  "name": "spear",
+  "version": "1.0.0",
+  "description": "Node CLI for creating react app",
+  "keywords": [
+    "node",
+    "cli",
+    "webpack",
+    "react"
+  ],
+  "author": "Mo Chen <mochen0505@hotmail.com>",
+  "homepage": "http://\u0016https://github.com/mochen0505",
+  "license": "MIT",
+  "main": "lib/spear.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  }
+}
