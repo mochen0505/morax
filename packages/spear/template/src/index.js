@@ -10,6 +10,7 @@ const app = new Launcher({
     routes
 })
 
-app.start()
 app.use(guid)
+
+app.start()
 
