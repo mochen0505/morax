@@ -1,6 +1,6 @@
 {
   "name": "@morax/spear",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Node CLI for creating react app",
   "bin": {
     "moo": "bin/moo.js"
