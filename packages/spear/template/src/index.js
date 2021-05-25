@@ -1,4 +1,5 @@
 import Launcher from '@morax/shield'
+import guid from '@morax/shield-guid'
 import routes from './routes.config'
 
 if (module && module.hot) {
@@ -10,4 +11,5 @@ const app = new Launcher({
 })
 
 app.start()
+app.use(guid)
 
