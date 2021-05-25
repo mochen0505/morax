@@ -6,7 +6,27 @@ import {
 } from 'react-router-dom'
 import { createBrowserHistory } from 'history';
 
-function outerWrapper(routes) {
+const plugins = []
+
+export function pluginsRegistry(item) {
+    plugins.push(item)
+}
+
+const pluginsWrapper = (type, children, props) => {
+    let wrapper = children
+
+    plugins.forEach(item => {
+        const { plugin, opt } = item
+        const wrapperMethod = plugin[type]
+
+        if (typeof wrapperMethod === 'function') {
+            wrapper = wrapperMethod(wrapper, opt, props)
+        }
+    })
+    return wrapper;
+}
+
+function routerWrapper(routes) {
 
     return (
         <Router history={createBrowserHistory()}>
@@ -14,7 +34,7 @@ function outerWrapper(routes) {
                 {
                     routes.map(({ path, exact, layout: Layout, component: Component }, index) => {
 
-                        return (
+                        const router = (
                             <Route
                                 key={index}
                                 path={path}
@@ -27,6 +47,7 @@ function outerWrapper(routes) {
                             />
                         );
 
+                        return pluginsWrapper('inner', router);
                     })
                 }
             </Switch>
@@ -35,9 +56,15 @@ function outerWrapper(routes) {
 }
 
 const wrapperTemplate = ({ routes }) => {
-    const wrapper = outerWrapper(routes)
+    const router = routerWrapper(routes)
+    const template = pluginsWrapper('outer', router)
 
-    return wrapper;
+    return (
+        // default hoc provider goes here
+        <>
+            {template}
+        </>
+    );
 }
 
 export default wrapperTemplate
