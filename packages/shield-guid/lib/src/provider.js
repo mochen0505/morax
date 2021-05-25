@@ -20,7 +20,7 @@ export default class GuidProvider extends React.Component {
                 if (ip) {
                     // 不让外部知道这个是用户本地的ip/加密ip
                     Cookie.set('lk', ip, {
-                        path: '/',
+                        path: '',
                         expires: 360
                     })
                 }
@@ -34,7 +34,7 @@ export default class GuidProvider extends React.Component {
                 if (finger) {
                     // 不让外部知道这个是设备指纹
                     Cookie.set('fg', finger, {
-                        path: '/',
+                        path: '',
                         expires: 360
                     })
                 }

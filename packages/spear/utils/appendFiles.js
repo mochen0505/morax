@@ -70,7 +70,7 @@ const packageTemp = (projectName) => `{
     },
     "dependencies": {
         "@morax/shield": "^0.1.0",
-        "@morax/shield-guid": "^0.0.2",
+        "@morax/shield-guid": "^0.0.3",
         "react": "^17.0.1",
         "react-dom": "^17.0.1"
     }
