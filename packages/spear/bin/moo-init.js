@@ -4,6 +4,9 @@ const inquirer = require('inquirer')
 const program = require('commander')
 const chalk = require('chalk')
 const templateInit = require('../utils/templateInit')
+// const { PLUGINS } = require('../scripts/constants');
+//
+// const pluginChoices = Object.values(PLUGINS);
 
 const promptList = [
 
@@ -19,12 +22,21 @@ const promptList = [
             return true;
         }
     },
+
+    // TODO: 选择模板
+    // {
+    //     type: 'list',
+    //     name: 'templateName',
+    //     message: `${chalk.yellow('select template you want to use:')}`,
+    //     choices: []
+    // },
+
     // TODO: 选择高阶组件
     // {
     //     type: 'checkbox',
-    //     message: `${chalk.yellow('select HOCs you want to use:')}`,
     //     name: 'hoc',
-    //     choices: []
+    //     message: `${chalk.yellow('select HOCs you want to use:')}`,
+    //     choices: pluginChoices,
     // },
 ]
 
