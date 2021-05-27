@@ -9,6 +9,10 @@ const isDev = process.env.NODE_ENV !== 'production';
 
 const NPM_VERSION_URL = 'https://registry.npmjs.org/@morax/spear/latest';
 
+const TEMPLATES = [
+  'default template'
+];
+
 const PLUGINS = {
   guid: {
     name: 'guid',
@@ -26,5 +30,6 @@ module.exports = {
     SERVER_PORT,
     isDev,
     NPM_VERSION_URL,
+    TEMPLATES,
     PLUGINS,
 }

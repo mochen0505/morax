@@ -4,8 +4,9 @@ const inquirer = require('inquirer')
 const program = require('commander')
 const chalk = require('chalk')
 const templateInit = require('../utils/templateInit')
-// const { PLUGINS } = require('../scripts/constants');
-//
+const { TEMPLATES, PLUGINS } = require('../scripts/constants');
+
+const templateChoices = TEMPLATES.map(template => ({ name: template, value: template }))
 // const pluginChoices = Object.values(PLUGINS);
 
 const promptList = [
@@ -23,13 +24,13 @@ const promptList = [
         }
     },
 
-    // TODO: 选择模板
-    // {
-    //     type: 'list',
-    //     name: 'templateName',
-    //     message: `${chalk.yellow('select template you want to use:')}`,
-    //     choices: []
-    // },
+    {
+        type: 'list',
+        name: 'templateName',
+        message: `${chalk.yellow('select template you want to use:')}`,
+        default: templateChoices[0].value,
+        choices: templateChoices,
+    },
 
     // TODO: 选择高阶组件
     // {
@@ -62,8 +63,8 @@ const projectName = args._[0]
 if (projectName === undefined) {
     inquirer
         .prompt(promptList)
-        .then(({ projectName }) => {
-            templateInit(projectName)
+        .then(({ projectName, templateName }) => {
+            templateInit(projectName, templateName)
         }).catch(err => {
             console.log(chalk.red(err))
             process.exit(-1)
