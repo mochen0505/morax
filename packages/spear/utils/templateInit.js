@@ -6,7 +6,7 @@ const { SPEAR_PATH, PROJECT_PATH } = require('../scripts/constants');
 const appendFiles = require('./appendFiles');
 const installDependencies = require('./installDependencies');
 
-function templateInit(projectName, templateName) {
+function templateInit(projectName) {
 
     const spinner = ora({
         color: 'yellow',
