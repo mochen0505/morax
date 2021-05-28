@@ -29,7 +29,7 @@ if(!lastUpdatedDate || currentDate !== lastUpdatedDate) {
     config.set('last-updated-date', currentDate);
     checkNodeVersion(requiredNodeVersion);
     checkMoraxVersion().then(res => {
-        const data = JSON.parse(res?.body);
+        const data = JSON.parse(res.body);
         const latest = data.version;
         notifier(latest);
         programConfig();
