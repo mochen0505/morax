@@ -3,11 +3,6 @@ declare module '*.svg' {
     export default path
 }
 
-declare module '*.bmp' {
-    const path: string
-    export default path
-}
-
 declare module '*.gif' {
     const path: string
     export default path

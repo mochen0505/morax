@@ -3,11 +3,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 const WebpackBar = require('webpackbar')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
-const HardSourceWebpackPlugin = require('hard-source-webpack-plugin')
 const webpack = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const { PROJECT_PATH, SPEAR_PATH, isDev } = require('../constants')
 
 const getCssLoaders = (importLoaders) => [
@@ -111,31 +110,13 @@ module.exports = {
                     },
                 ],
             },
-            {
-                test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
-                use: [
-                    {
-                        loader: 'url-loader',
-                        options: {
-                            limit: 10 * 1024,
-                            name: '[name].[contenthash:8].[ext]',
-                            outputPath: 'assets/images',
-                        },
-                    },
-                ],
+          {
+            test: /\.(png|jpg|jpeg|svg|gif)$/,
+            type: 'asset',
+            generator: {
+              filename: 'assets/images/[hash:8].[name][ext]',
             },
-            {
-                test: /\.(ttf|woff|woff2|eot|otf)$/,
-                use: [
-                    {
-                        loader: 'url-loader',
-                        options: {
-                            name: '[name].[contenthash:8].[ext]',
-                            outputPath: 'assets/fonts',
-                        },
-                    },
-                ],
-            },
+          },
         ],
     },
     plugins: [
@@ -179,7 +160,6 @@ module.exports = {
                 configFile: resolve(SPEAR_PATH, './tsconfig.json'),
             },
         }),
-        new HardSourceWebpackPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         !isDev &&
             new MiniCssExtractPlugin({
@@ -203,11 +183,18 @@ module.exports = {
                         compress: { pure_funcs: ['console.log'] },
                     },
                 }),
-            !isDev && new OptimizeCssAssetsPlugin(),
+            !isDev && new CssMinimizerPlugin()
         ].filter(Boolean),
         splitChunks: {
             chunks: 'all',
             name: true,
         },
     },
+    cache: {
+        type: 'filesystem',
+        buildDependencies: {
+            config: [__filename],
+        },
+        name: 'production-cache'
+    }
 }
