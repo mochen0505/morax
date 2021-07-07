@@ -8,7 +8,6 @@ const { PROJECT_PATH } = require('../constants')
 
 module.exports = merge(common, {
     mode: 'production',
-    devtool: 'none',
     plugins: [
         new CleanWebpackPlugin(),
         new PurgeCSSPlugin({

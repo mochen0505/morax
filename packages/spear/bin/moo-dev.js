@@ -34,6 +34,9 @@ const compiler = webpack(webpackConfig);
 const devServerOptions = Object.assign({}, webpackConfig.devServer, {
     host: SERVER_HOST,
     port: port,
+    client: {
+      logging: 'none'
+    },
     compress: true,
     open: true,
     hot: true,

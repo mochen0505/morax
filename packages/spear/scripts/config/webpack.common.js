@@ -148,6 +148,11 @@ module.exports = {
                     from: '*',
                     to: resolve(PROJECT_PATH, './dist'),
                     toType: 'dir',
+                    globOptions: {
+                        dot: true,
+                        gitignore: true,
+                        ignore: ["**/index.html"],
+                    },
                 },
             ],
         }),
@@ -187,7 +192,6 @@ module.exports = {
         ].filter(Boolean),
         splitChunks: {
             chunks: 'all',
-            name: true,
         },
     },
     cache: {
@@ -196,5 +200,6 @@ module.exports = {
             config: [__filename],
         },
         name: 'production-cache'
-    }
+    },
+    stats: 'errors-only',
 }
