@@ -10,8 +10,12 @@ const isDev = process.env.NODE_ENV !== 'production';
 const NPM_VERSION_URL = 'https://registry.npmjs.org/@morax/spear/latest';
 
 const TEMPLATES = [
-  'default template'
+  'morax-template'
 ];
+
+const GITHUB = {
+  host: 'github.com/mochen0505'
+}
 
 const PLUGINS = {
   guid: {
@@ -31,5 +35,6 @@ module.exports = {
     isDev,
     NPM_VERSION_URL,
     TEMPLATES,
+    GITHUB,
     PLUGINS,
 }

@@ -63,8 +63,8 @@ const projectName = args._[0]
 if (projectName === undefined) {
     inquirer
         .prompt(promptList)
-        .then(({ projectName }) => {
-            templateInit(projectName)
+        .then(({ projectName, templateName }) => {
+            templateInit(projectName, templateName)
         }).catch(err => {
             console.log(chalk.red(err))
             process.exit(-1)
@@ -72,8 +72,8 @@ if (projectName === undefined) {
 } else {
     inquirer
         .prompt(promptList.slice(1))
-        .then(() => {
-            templateInit(projectName)
+        .then(({ templateName }) => {
+            templateInit(projectName, templateName)
         }).catch(err => {
         console.log(chalk.red(err))
         process.exit(-1)
