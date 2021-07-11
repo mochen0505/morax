@@ -37,4 +37,4 @@ moo lint
 
 ### TODO
 
-* Migrate to webpack 5
+* ~~Migrate to webpack 5~~
