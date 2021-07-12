@@ -90,7 +90,7 @@ function templateInit(projectName, templateName) {
 
     const spinner = ora({
         color: 'yellow',
-        text: chalk.yellow(`Downloading template: ${projectName}...`),
+        text: chalk.yellow(`Downloading template: ${templateName}...`),
     })
 
     spinner.start()
