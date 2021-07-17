@@ -34,7 +34,3 @@ moo build
 ```bash
 moo lint
 ```
-
-### TODO
-
-* ~~Migrate to webpack 5~~
