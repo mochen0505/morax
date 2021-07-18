@@ -44,7 +44,7 @@ module.exports = {
         app: resolve(PROJECT_PATH, './src/index.js'),
     },
     output: {
-        filename: `js/[name]${isDev ? '' : '.[hash:8]'}.js`,
+        filename: `js/[name]${isDev ? '' : '.[contenthash:8]'}.js`,
         path: resolve(PROJECT_PATH, './dist'),
     },
     resolve: {
@@ -114,7 +114,7 @@ module.exports = {
             test: /\.(png|jpg|jpeg|svg|gif)$/,
             type: 'asset',
             generator: {
-              filename: 'assets/images/[hash:8].[name][ext]',
+              filename: 'assets/images/[contenthash:8].[name][ext]',
             },
           },
         ],
