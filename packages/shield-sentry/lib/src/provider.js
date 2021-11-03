@@ -25,6 +25,25 @@ class ExceptionReporerProvider extends Component {
         });
     }
 
+    // 捕捉上报全局异常
+    componentDidCatch(error, errorInfo) {
+        const scopeExceptionMaker = scope => {
+            scope.setExtras(errorInfo)
+            return error
+        }
+        if (!scopeExceptionMaker || typeof scopeExceptionMaker !== 'function') {
+            return;
+        }
+        Sentry.withScope(scope => {
+            const scopeException = scopeExceptionMaker(scope)
+
+            if (scopeException) {
+                Sentry.captureException(scopeException)
+            }
+        });
+        console.log(error)
+    }
+
     render() {
         const { children } = this.props
 
