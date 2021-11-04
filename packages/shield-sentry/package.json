@@ -1,6 +1,6 @@
 {
   "name": "@morax/shield-sentry",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "sentry",
   "main": "lib/index.js",
   "scripts": {},
