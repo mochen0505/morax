@@ -2,9 +2,13 @@ import React, { Component, Children } from 'react'
 import * as Sentry from '@sentry/react'
 import { Integrations } from "@sentry/tracing";
 
-class ExceptionReporerProvider extends Component {
+class SentryProvider extends Component {
     constructor(props) {
         super(props)
+
+        this.state = {
+            error: null
+        }
     }
 
     static getDerivedStateFromError(error) {
@@ -25,30 +29,19 @@ class ExceptionReporerProvider extends Component {
         });
     }
 
-    // 捕捉上报全局异常
-    componentDidCatch(error, errorInfo) {
-        const scopeExceptionMaker = scope => {
-            scope.setExtras(errorInfo)
-            return error
-        }
-        if (!scopeExceptionMaker || typeof scopeExceptionMaker !== 'function') {
-            return;
-        }
-        Sentry.withScope(scope => {
-            const scopeException = scopeExceptionMaker(scope)
-
-            if (scopeException) {
-                Sentry.captureException(scopeException)
-            }
-        });
-        console.log(error)
-    }
-
     render() {
+        if (this.state.error) {
+            return (
+                <>
+                    <p>something went wrong</p>
+                    <p>{ this.state.error.message }</p>
+                </>
+            )
+        }
         const { children } = this.props
 
         return Children.only(children)
     }
 }
-export default ExceptionReporerProvider
+export default SentryProvider
 
