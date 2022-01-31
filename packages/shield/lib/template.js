@@ -1,10 +1,9 @@
 import React from 'react'
 import {
-    Router,
-    Switch,
+    BrowserRouter,
+    Routes,
     Route,
 } from 'react-router-dom'
-import { createBrowserHistory } from 'history';
 
 const plugins = []
 
@@ -29,8 +28,8 @@ const pluginsWrapper = (type, children, props) => {
 function routerWrapper(routes) {
 
     return (
-        <Router history={createBrowserHistory()}>
-            <Switch>
+        <BrowserRouter>
+            <Routes>
                 {
                     routes.map(({ path, exact, layout: Layout, component: Component }, index) => {
 
@@ -39,19 +38,19 @@ function routerWrapper(routes) {
                                 key={index}
                                 path={path}
                                 exact={exact}
-                                render={(props) => (
-                                    <Layout {...props}>
-                                        <Component {...props}/>
+                                element={
+                                    <Layout>
+                                        <Component/>
                                     </Layout>
-                                )}
+                                }
                             />
                         );
 
                         return pluginsWrapper('inner', router);
                     })
                 }
-            </Switch>
-        </Router>
+            </Routes>
+        </BrowserRouter>
     );
 }
 
