@@ -1,0 +1,31 @@
+{
+  "name": "@morax/shield-perf",
+  "version": "1.0.0",
+  "description": "Performance tools",
+  "main": "lib/index.js",
+  "scripts": {},
+  "keywords": [
+    "perf"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": {
+    "name": "Mo",
+    "url": "https://github.com/mochen0505",
+    "email": "mochen0505@hotmail.com"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "ie >= 9",
+    "not op_mini all"
+  ],
+  "engines": {
+    "node": ">=10.13.0"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "web-vitals": "^2.1.4"
+  }
+}
