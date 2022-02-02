@@ -8,7 +8,7 @@ export default class Launcher extends Component {
         super(props)
     }
 
-    async start() {
+    start() {
 
         const {
             routes,
