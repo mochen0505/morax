@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import reportWebVitals from '@morax/shield-perf';
 import WrapperTemplate from './template';
 import { pluginsRegistry } from "./template";
 
@@ -8,7 +9,7 @@ export default class Launcher extends Component {
         super(props)
     }
 
-    start() {
+    start(opts) {
 
         const {
             routes,
@@ -23,6 +24,10 @@ export default class Launcher extends Component {
             />,
             rootElement
         )
+
+        if (opts && opts.perf) {
+            reportWebVitals(console.log)
+        }
     }
 
     use(plugin, opt) {
