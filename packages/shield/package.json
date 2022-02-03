@@ -1,6 +1,6 @@
 {
   "name": "@morax/shield",
-  "version": "0.1.4",
+  "version": "1.0.0",
   "description": "Set of higher-order components",
   "main": "lib/Launcher.js",
   "scripts": {},
