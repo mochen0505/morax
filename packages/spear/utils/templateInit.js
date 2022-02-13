@@ -5,6 +5,8 @@ const mkdirp = require('mkdirp')
 const del = require('del')
 const ora = require('ora')
 const chalk = require('chalk')
+const figlet = require('figlet');
+const gradient = require('gradient-string');
 const { PROJECT_PATH } = require('../scripts/constants');
 const downloadTemplate = require('../utils/downloadTemplate');
 const { installDependencies } = require('../utils/updateProjectFile')
@@ -110,20 +112,25 @@ function templateInit(projectName, templateName) {
             files,
             asyncJobWaterfall(projectName),
             async err => {
-              spinner.stop()
-              if (err) {
-                del.sync([projectPath])
-                console.log(chalk.red(err));
-                process.exit(-1)
-              }
+                spinner.stop()
+                if (err) {
+                    del.sync([projectPath])
+                    console.log(chalk.red(err));
+                    process.exit(-1)
+                }
 
-              spinner.text = `Installing ${projectName} dependencies ....`
-              spinner.start()
+                spinner.text = `Installing ${projectName} dependencies ....`
+                spinner.start()
 
-              installDependencies(projectPath)
+                installDependencies(projectPath)
 
-              spinner.stop()
-              console.log(chalk.yellow(`${projectName} generated successfully`));
+                spinner.stop()
+                const msg = 'Congrats!'
+                figlet(msg, (err, data) => {
+                    console.log(gradient.pastel.multiline(data))
+                })
+
+                console.log(chalk.yellow(`${projectName} generated successfully`));
             }
         )
     })
