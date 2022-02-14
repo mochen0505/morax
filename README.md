@@ -1,4 +1,4 @@
 # README #
 
-MORAX - A CLI Scaffold for react projects
+MORAX - A CLI tool for generating scaffold for react projects
 
