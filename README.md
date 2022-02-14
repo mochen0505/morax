@@ -1,4 +1,4 @@
 # README #
 
-MORAX - A bootstrapper for react projects
+MORAX - A CLI Scaffold for react projects
 
