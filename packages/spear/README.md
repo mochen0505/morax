@@ -5,7 +5,7 @@ A Node CLI for creating react app
 
 ### Usage
 
-* Install
+* Installation
 
 ```bash
 npm install -g @morax/spear
