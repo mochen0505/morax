@@ -27,6 +27,8 @@
   "license": "MIT",
   "dependencies": {
     "@sentry/react": "^6.19.3",
-    "@sentry/tracing": "^6.19.3"
+    "@sentry/tracing": "^6.19.3",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   }
 }
