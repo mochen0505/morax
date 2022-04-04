@@ -77,6 +77,8 @@
     "postcss-normalize": "^10.0.0",
     "postcss-preset-env": "^6.7.0",
     "purgecss-webpack-plugin": "^4.0.3",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "semver": "^7.3.2",
     "shelljs": "^0.8.4",
     "style-loader": "^3.0.0",
