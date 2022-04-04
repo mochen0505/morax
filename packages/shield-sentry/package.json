@@ -25,8 +25,5 @@
     "node": ">=10.13.0"
   },
   "license": "MIT",
-  "dependencies": {
-    "@sentry/react": "^6.19.3",
-    "@sentry/tracing": "^6.19.3"
-  }
+  "dependencies": {}
 }
