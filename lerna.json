@@ -1,11 +1,3 @@
 {
-  "packages": [
-    "packages/*"
-  ],
-  "command": {
-    "bootstrap": {
-      "hoist": true
-    }
-  },
   "version": "independent"
 }

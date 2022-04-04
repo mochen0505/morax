@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import reportWebVitals from '@morax/shield-perf';
 import WrapperTemplate from './template';
 import { pluginsRegistry } from "./template";
@@ -16,13 +16,12 @@ export default class Launcher extends Component {
         } = this.props
 
         const rootElement = document.querySelector('#root')
-        const render = ReactDOM.render;
+        const root = ReactDOM.createRoot(rootElement)
 
-        render(
+        root.render(
             <WrapperTemplate
                 routes={routes}
-            />,
-            rootElement
+            />
         )
 
         if (opts && opts.perf) {
