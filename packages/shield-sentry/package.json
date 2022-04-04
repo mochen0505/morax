@@ -1,6 +1,6 @@
 {
   "name": "@morax/shield-sentry",
-  "version": "2.0.1",
+  "version": "2.0.0",
   "description": "sentry",
   "main": "lib/index.js",
   "scripts": {},
@@ -24,5 +24,9 @@
   "engines": {
     "node": ">=10.13.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@sentry/react": "^6.19.3",
+    "@sentry/tracing": "^6.19.3"
+  }
 }
